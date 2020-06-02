@@ -1,0 +1,22 @@
+server:
+  port: 88
+
+spring:
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 192.168.0.121:8661
+    gateway:
+      routes:
+        - id: test_route
+          uri: https://www.baidu.com
+          predicates:
+            - Query=url,baidu
+
+
+mybatis-plus:
+  mapper-locations: classpath:/mapper/**/*.xml
+  global-config:
+    db-config:
+      id-type: auto
+
